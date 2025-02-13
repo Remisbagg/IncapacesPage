@@ -4,6 +4,14 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+let slideIndex = 0;
+
+function moveSlide(direction) {
+	const slides = document.querySelectorAll(".slide");
+	slideIndex = (slideIndex + direction + slides.length) % slides.length;
+	document.querySelector(".carousel").style.transform = `translateX(-${slideIndex * 100}%)`;
+}
 (function($) {
 
 	var	$window = $(window),
